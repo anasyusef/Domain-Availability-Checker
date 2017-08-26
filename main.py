@@ -1,10 +1,8 @@
 from CheckDomains import CheckDomain
 from DomainGenerators import DomainGenerator
-from DomainAppraisals import DomainAppraisal
 
 import configuration
 import os
-from selenium.common.exceptions import NoSuchWindowException
 import logging
 import extras
 
@@ -47,8 +45,6 @@ if __name__ == '__main__':
 
     print('Getting information. Program Started.')
 
-    loop_count = 0
-
     starting_domain_len = len(domains)
 
     logger.info('Length of VAR domains: {}'.format(starting_domain_len))
@@ -76,20 +72,6 @@ if __name__ == '__main__':
         logger.info('{}/{} Domains found are available'.format(domains_available,
                                                                starting_domain_len))
 
-        # logger.info('Starting to appraise domains')
-
-        # if loop_count == 0:  # Instantiate the object only once, specially in the first loop
-        #
-        #     bar = DomainAppraisal(home_url=configuration.HOME_URL, url_valuate=configuration.URL_VALUATE,
-        #                           url_login=configuration.URL_LOGIN)
-
-
-        # try:
-        #     bar.domain_enter_page(domains_checked)
-        # except NoSuchWindowException:
-        #     print('Window Closed. Couldn\'t proceed')
-        #     break
-
         check_domain.transfer_into_file(domains_checked)
 
         extras.remove_found_domains(domains, CheckDomain.domains_to_check)
@@ -97,14 +79,11 @@ if __name__ == '__main__':
         logger.info('Domains left: {}'.format(len(domains)))
         logger.info('Domains checked: {}'.format(CheckDomain.checked))
 
-        loop_count += 1
-
     if os.path.isfile(configuration.filename) and configuration.domain_get_method == 'file':
         print('Program Finished. Check your {} file'.format(configuration.filename))
     else:
         print('Program Finished. No domains were found.')
 
-    # bar.driver.quit()
     logger.info('----------------------- Program Finished! -------------------')
 
 
