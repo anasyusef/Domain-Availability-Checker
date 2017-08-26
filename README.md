@@ -6,4 +6,4 @@ In order to initialize the program you need to set your credentials in the confi
 
 You have the option to generate the permutations of the letters chosen or to get the domains from a file. It must be a **.txt** file
 
-If you have files that you want the program to use, then you need to store them in a folder called **letters_dictionary** as it is assigned in the **FOLDER_TO_SAVE_DOMAINS** constant
+If you have files that you want the program to use, then you need to store them in a folder called **letters_dictionary** as it is assigned in the **FOLDER_TO_SAVE_FILENAME_DOMAINS** variable
