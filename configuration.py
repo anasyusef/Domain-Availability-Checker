@@ -1,16 +1,12 @@
 from string import ascii_lowercase
 import os.path
 
-USERNAME = "anasyusef"
-API_KEY = "393a2dc4ecd74a1e881cae01f3c727c0"
-IP_ADDRESS = "81.136.30.106"
+USERNAME = "<USERNAME>"
+API_KEY = "<API_KEY>"
+IP_ADDRESS = "<IP_ADDRESS>"
 SANDBOX = False
-HOME_URL = 'https://www.domaining.com/'
-URL_VALUATE = 'https://www.domaining.com/valuate/'
-URL_LOGIN = 'https://www.domaining.com/login/'
 FOLDER_TO_SAVE_FILENAME_DOMAINS = 'letters_dictionary/'
 LOG_FILE = 'logs/'
-# COOKIE_ID = "9760aeef4f259a70d0efd138fbe6d967"
 
 
 print("How would you like to get your domains.\nType 'generate' to generate them or 'file' to retrieve them from file.")
